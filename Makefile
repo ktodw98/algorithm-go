@@ -20,6 +20,7 @@ new-lc:
 	@mkdir -p $(DIR)
 	@echo "package p$(shell printf "%04d" $(n))\n\nfunc solve() {\n\n}" > $(DIR)/solution.go
 	@echo "package p$(shell printf "%04d" $(n))\n\nimport \"testing\"\n\nfunc TestSolve(t *testing.T) {\n\n}" > $(DIR)/solution_test.go
+	@echo "package p$(shell printf "%04d" $(n))\n\nimport \"testing\"\n\nfunc BenchmarkSolve(b *testing.B) {\n\tfor i := 0; i < b.N; i++ {\n\t\tsolve()\n\t}\n}" > $(DIR)/solution_benchmark_test.go
 	@echo "# LeetCode $(n). $(name)\n\n- [링크](https://leetcode.com/problems/$(subst _,-,$(name))/)" > $(DIR)/README.md
 	@echo "✅ LeetCode $(n)번 생성 완료"
 
