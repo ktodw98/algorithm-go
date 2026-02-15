@@ -1,7 +1,6 @@
 package p0027
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -20,7 +19,7 @@ func TestSolve(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		got := solve(tt.nums, tt.val)
+		got := solve2(tt.nums, tt.val)
 		ans := []int{}
 
 		if got > 0 {
@@ -34,7 +33,6 @@ func TestSolve(t *testing.T) {
 }
 
 func sameElem(a []int, b []int) bool {
-	fmt.Println(1)
 	if len(a) != len(b) {
 		return false
 	}

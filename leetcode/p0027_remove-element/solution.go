@@ -1,6 +1,7 @@
 package p0027
 
 func solve(nums []int, val int) int {
+	// using two pointer, change only if needed
 	if len(nums) == 0 {
 		return 0
 	}
@@ -24,4 +25,16 @@ func solve(nums []int, val int) int {
 		return i
 	}
 	return i + 1
+}
+
+func solve2(nums []int, val int) int {
+	// replace every non-val nums from front of list
+	ptr := 0
+	for i := 0; i < len(nums); i++ {
+		if nums[i] != val {
+			nums[ptr] = nums[i]
+			ptr += 1
+		}
+	}
+	return ptr
 }
