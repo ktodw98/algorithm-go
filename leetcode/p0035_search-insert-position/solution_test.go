@@ -17,7 +17,7 @@ func TestSolve(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		got := solve(tt.nums, tt.target)
+		got := solve2(tt.nums, tt.target)
 		if got != tt.want {
 			t.Errorf("%v) exact index of %v in %v: Expected %v, but %v", tt.name, tt.target, tt.nums, tt.want, got)
 		}

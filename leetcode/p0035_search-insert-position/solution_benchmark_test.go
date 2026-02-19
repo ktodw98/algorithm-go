@@ -23,3 +23,12 @@ func BenchmarkSolve(b *testing.B) {
 		solve(BenchNums, BenchTarget)
 	}
 }
+
+func BenchmarkSolve2(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		solve2(BenchNums, BenchTarget)
+	}
+}
+
+// BenchmarkSolve-10       51737053                22.76 ns/op            0 B/op          0 allocs/op
+// BenchmarkSolve2-10      78420049                15.55 ns/op            0 B/op          0 allocs/op

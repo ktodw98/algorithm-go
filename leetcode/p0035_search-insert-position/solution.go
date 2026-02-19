@@ -22,3 +22,24 @@ func solve(nums []int, target int) int {
 	}
 	return idx
 }
+
+func solve2(nums []int, target int) int {
+	// Refactor to Go-ish code
+	i, j := 0, len(nums)
+
+	// (1) Remove redundant if statement replacing "<=" to "<"
+	for i < j {
+		// (2) prevent overflow with uint
+		// (alternative) mid := i + (j-i)/2
+		// (3) boost calc speed with bit operation
+		mid := int(uint(i+j) >> 1)
+
+		if nums[mid] < target {
+			i = mid + 1
+		} else {
+			j = mid
+		}
+	}
+
+	return i
+}
