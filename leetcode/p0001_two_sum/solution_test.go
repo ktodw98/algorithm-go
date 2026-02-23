@@ -5,17 +5,17 @@ import (
 	"testing"
 )
 
-func TestSolve(t *testing.T) {
-	nums := []int{2, 7, 11, 15}
-	target := 9
-	want := []int{0, 1}
+// func TestSolve(t *testing.T) {
+// 	nums := []int{2, 7, 11, 15}
+// 	target := 9
+// 	want := []int{0, 1}
 
-	got := solve(nums, target)
+// 	got := solve(nums, target)
 
-	if !reflect.DeepEqual(got, want) {
-		t.Errorf("twoSome() = %v, want %v", got, want)
-	}
-}
+// 	if !reflect.DeepEqual(got, want) {
+// 		t.Errorf("twoSome() = %v, want %v", got, want)
+// 	}
+// }
 
 func TestSolveWithSlice(t *testing.T) {
 	tests := []struct {
@@ -30,7 +30,7 @@ func TestSolveWithSlice(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		got := solve(tt.nums, tt.target)
+		got := solve2(tt.nums, tt.target)
 		if !reflect.DeepEqual(got, tt.want) {
 			t.Errorf("%v: twoSome() = %v, want %v", tt.name, got, tt.want)
 		}

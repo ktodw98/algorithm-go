@@ -17,3 +17,19 @@ Loop:
 
 	return output
 }
+
+func solve2(nums []int, target int) []int {
+	/*Use hashtable */
+	mapper := make(map[int]int)
+
+	for i := 0; i < len(nums); i++ {
+		comp := target - nums[i]
+		idx, ok := mapper[comp]
+		if ok && idx != i {
+			return []int{idx, i}
+		}
+		mapper[nums[i]] = i
+	}
+
+	return nil
+}
